@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Note for Aastha</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles for the romantic theme and animations */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #fff0f5, #fde4e4, #fff9f9);
+            overflow-x: hidden;
+            animation: fadeInPage 1s ease-in-out;
+        }
+
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 182, 193, 0.4);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 30px rgba(227, 139, 157, 0.2);
+        }
+        
+        @keyframes fadeInPage {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Heart icon style */
+        .heart-icon {
+            color: #f472b6; /* A nice pink color */
+        }
+        
+        /* Staggered animation delays */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-600 { animation-delay: 0.6s; }
+        .delay-700 { animation-delay: 0.7s; }
+
+        /* Hide the native audio element but keep custom buttons visible */
+        audio {
+            display: none;
+        }
+        
+        /* Ensure player is above other elements */
+        .audio-container {
+            position: relative;
+            z-index: 50;
+        }
+
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <div class="container mx-auto px-4 py-12 md:py-20 max-w-4xl text-center">
+
+        <header class="mb-12">
+            <h1 class="font-dancing text-5xl md:text-7xl text-pink-500 font-bold fade-in-up">
+                For My Dearest Aastha
+            </h1>
+            <p class="mt-4 text-lg text-gray-500 fade-in-up delay-100">
+                Just a few words to tell you how wonderful you are.
+            </p>
+
+            <!-- Main Background Music Player (Now a custom button) -->
+            <div class="mt-6 fade-in-up delay-200 flex justify-center audio-container">
+                <div class="bg-white/80 p-1 rounded-full shadow-md border border-pink-300 hover:shadow-pink-200 transition-shadow">
+                    <button id="toggleBgMusic" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transform transition hover:scale-105 flex items-center space-x-2">
+                        <!-- Play Icon (Default) -->
+                        <svg id="bgMusicPlayIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                        <!-- Pause Icon (Hidden by default) -->
+                        <svg id="bgMusicPauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                        <span id="bgMusicText">Play Song (Loop)</span>
+                    </button>
+                    <audio id="bgMusic" loop src="song.mp3"></audio>
+                </div>
+            </div>
+            <p class="text-xs text-pink-400 mt-2 fade-in-up delay-200">Click to listen</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="card p-8 rounded-2xl shadow-lg fade-in-up delay-200">
+                <div class="flex justify-center mb-4">
+                     <svg class="w-10 h-10 heart-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h2 class="font-dancing text-3xl text-pink-600 mb-3">Your Smile</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    "If I had a flower for every time I thought of you... I could walk through my garden forever. Your smile is the brightest bloom in it."
+                </p>
+            </div>
+            
+            <div class="card p-8 rounded-2xl shadow-lg fade-in-up delay-300">
+                <div class="flex justify-center mb-4">
+                     <svg class="w-10 h-10 heart-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h2 class="font-dancing text-3xl text-pink-600 mb-3">Your Eyes</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    "Sometimes I get lost in your eyes. Not because I'm not paying attention, but because they hold a universe I never want to leave."
+                </p>
+            </div>
+            
+            <!-- Shayari Section with Custom Audio Block -->
+            <div class="md:col-span-2 card p-8 rounded-2xl shadow-lg fade-in-up delay-400">
+                <div class="flex justify-center mb-4">
+                     <svg class="w-10 h-10 heart-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h2 class="font-dancing text-3xl text-pink-600 mb-4">तुम्हारे लिए</h2>
+                <p class="text-gray-600 leading-relaxed text-2xl" style="font-family: 'Inter', sans-serif;">
+                    तेरी आँखों की गहराई में खो जाऊं,<br>
+                    तेरे हर लफ्ज़ पे मैं मर जाऊं,<br>
+                    आस्था, तुम वो खूबसूरत कहानी है,<br>
+                    जिसे मैं हर पल जीना चाहूं।
+                </p>
+                
+                <!-- CUSTOM AUDIO BLOCK FOR SHAYARI -->
+                <div class="mt-6 flex flex-col items-center justify-center">
+                    <button id="toggleShayari" class="bg-pink-50 hover:bg-pink-100 text-pink-600 font-bold py-2 px-4 rounded-full border border-pink-300 shadow-sm transform transition hover:scale-105 flex items-center space-x-2">
+                        <!-- Play Icon (Default) -->
+                        <svg id="shayariPlayIcon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                        <!-- Pause Icon (Hidden by default) -->
+                        <svg id="shayariPauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                         <span id="bgMusicText">Play Song (Loop)</span>
+                    </button>
+                    <!-- Audio element is now hidden -->
+                    <audio id="shayariAudio" src="Pehli Baar Dhadak 128 Kbps.mp3"></audio>
+                </div>
+                <!-- END CUSTOM AUDIO BLOCK -->
+                
+            </div>
+            
+            <div class="card p-8 rounded-2xl shadow-lg fade-in-up delay-500">
+                <div class="flex justify-center mb-4">
+                     <svg class="w-10 h-10 heart-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h2 class="font-dancing text-3xl text-pink-600 mb-3">My Light</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    "Whenever I feel lost or the world seems dark, you are the light that guides me through. I am incredibly lucky to have you in my life."
+                </p>
+            </div>
+
+            <div class="card p-8 rounded-2xl shadow-lg fade-in-up delay-600">
+                <div class="flex justify-center mb-4">
+                     <svg class="w-10 h-10 heart-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h2 class="font-dancing text-3xl text-pink-600 mb-3">The Best Person</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    "Simply put, you are the best person I've ever known. Thank you for being you, Aastha."
+                </p>
+            </div>
+
+            <div class="md:col-span-2 card p-8 rounded-2xl shadow-lg fade-in-up delay-700">
+                <div class="flex justify-center mb-4">
+                     <svg class="w-10 h-10 heart-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h2 class="font-dancing text-3xl text-pink-600 mb-3">A Promise to You</h2>
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    "This is more than a feeling; it's a promise I make to you with all my heart. I will make you my forever, my always, my home. I promise to be your constant support, to hold your hand through every storm, and to celebrate every ray of sunshine with you. I will never leave you. My heart is yours, and with you is where I'll always be."
+                </p>
+            </div>
+        </main>
+
+        <footer class="mt-16 fade-in-up delay-800">
+             <p class="font-dancing text-2xl md:text-3xl text-pink-500">
+                You are one of a kind.
+            </p>
+            <p class="mt-4 text-gray-500">
+                - From someone who thinks you're amazing.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // --- TIMING CONFIGURATION (Adjust these values) ---
+        
+        // 1. Main Background Music (ID: bgMusic) - Set to loop indefinitely within limits
+        const BG_MUSIC_START = 19;  // Start playback at 5 seconds
+        const BG_MUSIC_STOP = 80;  // Stop playback at 35 seconds
+        
+        // 2. Shayari Voice Note (ID: shayariAudio) - Plays once within limits
+        const SHAYARI_START = 45;   // Start playback at 0 seconds
+        const SHAYARI_STOP = 155;   // Stop playback at 25 seconds
+        
+        // ----------------------------------------------------
+
+        // Get references to the HTML and Audio elements
+        const bgMusic = document.getElementById('bgMusic');
+        const shayariAudio = document.getElementById('shayariAudio');
+
+        const toggleBgMusic = document.getElementById('toggleBgMusic');
+        const bgMusicPlayIcon = document.getElementById('bgMusicPlayIcon');
+        const bgMusicPauseIcon = document.getElementById('bgMusicPauseIcon');
+        const bgMusicText = document.getElementById('bgMusicText');
+        
+        const toggleShayari = document.getElementById('toggleShayari');
+        const shayariPlayIcon = document.getElementById('shayariPlayIcon');
+        const shayariPauseIcon = document.getElementById('shayariPauseIcon');
+        const shayariText = document.getElementById('shayariText');
+
+        /**
+         * Updates the visual state of the play/pause button.
+         */
+        const updateButtonState = (isPlaying, playIcon, pauseIcon, textElement, defaultText, pauseText) => {
+            if (isPlaying) {
+                playIcon.classList.add('hidden');
+                pauseIcon.classList.remove('hidden');
+                textElement.textContent = pauseText;
+            } else {
+                playIcon.classList.remove('hidden');
+                pauseIcon.classList.add('hidden');
+                textElement.textContent = defaultText;
+            }
+        };
+
+        /**
+         * Enforces the custom playback start and stop limits and updates the button state.
+         * @param {HTMLAudioElement} audioElement The audio element to control.
+         * @param {number} startSeconds The desired start time (lower limit).
+         * @param {number} stopSeconds The desired stop time (upper limit).
+         * @param {HTMLElement} playIcon The play SVG icon element.
+         * @param {HTMLElement} pauseIcon The pause SVG icon element.
+         * @param {HTMLElement} textElement The text span element.
+         * @param {string} defaultText The default text for the button.
+         * @param {string} pauseText The text when audio is paused.
+         */
+        const enforceLimit = (audioElement, startSeconds, stopSeconds, playIcon, pauseIcon, textElement, defaultText, pauseText) => {
+            
+            // Set initial time when loaded
+            audioElement.addEventListener('loadedmetadata', () => {
+                audioElement.currentTime = startSeconds;
+            });
+            
+            // Time update listener for enforcement
+            audioElement.addEventListener('timeupdate', () => {
+                // 1. Check if current time has reached the upper limit (stop time)
+                if (audioElement.currentTime >= stopSeconds) {
+                    audioElement.pause();
+                    audioElement.currentTime = startSeconds; // Reset to the start limit
+                    
+                    // Update button state visually
+                    updateButtonState(false, playIcon, pauseIcon, textElement, defaultText, pauseText);
+                }
+            });
+
+            // If the user manually seeks/restarts before the start time, jump them forward.
+            audioElement.addEventListener('play', () => {
+                 if (audioElement.currentTime < startSeconds || audioElement.currentTime >= stopSeconds) {
+                    audioElement.currentTime = startSeconds;
+                }
+                updateButtonState(true, playIcon, pauseIcon, textElement, defaultText, pauseText);
+            });
+            
+            audioElement.addEventListener('pause', () => {
+                updateButtonState(false, playIcon, pauseIcon, textElement, defaultText, pauseText);
+            });
+            
+            // Reset to start time if the audio finishes naturally (important for non-looping audio)
+            audioElement.addEventListener('ended', () => {
+                audioElement.currentTime = startSeconds;
+                updateButtonState(false, playIcon, pauseIcon, textElement, defaultText, pauseText);
+            });
+        };
+        
+        // --- 1. Background Music Logic ---
+        enforceLimit(bgMusic, BG_MUSIC_START, BG_MUSIC_STOP, 
+                     bgMusicPlayIcon, bgMusicPauseIcon, bgMusicText, 
+                     'Play Song (Loop)', 'Pause Song');
+
+        toggleBgMusic.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play().catch(e => console.error("Playback failed:", e));
+            } else {
+                bgMusic.pause();
+            }
+        });
+        
+        // --- 2. Shayari Audio Logic ---
+        enforceLimit(shayariAudio, SHAYARI_START, SHAYARI_STOP, 
+                     shayariPlayIcon, shayariPauseIcon, shayariText, 
+                     'Listen to me recite this for you', 'Pause Recitation');
+
+        toggleShayari.addEventListener('click', () => {
+            if (shayariAudio.paused) {
+                shayariAudio.play().catch(e => console.error("Playback failed:", e));
+            } else {
+                shayariAudio.pause();
+            }
+        });
+        
+    </script>
+</body>
+</html>
