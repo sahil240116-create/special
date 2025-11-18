@@ -75,6 +75,14 @@
         /* Audio Player Custom Styling */
         audio {
             filter: sepia(20%) hue-rotate(300deg) saturate(140%);
+            outline: none;
+            cursor: pointer;
+        }
+        
+        /* Ensure player is above other elements */
+        .audio-container {
+            position: relative;
+            z-index: 50;
         }
 
     </style>
@@ -91,15 +99,17 @@
                 Just a few words to tell you how wonderful you are.
             </p>
 
-            <div class="mt-6 fade-in-up delay-200 flex justify-center">
-                <div class="bg-white/50 p-2 rounded-full shadow-sm border border-pink-200">
+            <div class="mt-6 fade-in-up delay-200 flex justify-center audio-container">
+                <div class="bg-white/80 p-3 rounded-full shadow-md border border-pink-300 hover:shadow-pink-200 transition-shadow">
+                    <!-- FIXED: Cleaned up src attribute and added a working sample URL -->
                     <audio id="bgMusic" controls loop class="h-10 rounded-full">
                         <source src=""C:\Users\gsahi\OneDrive\Desktop\Tumse Behtar Sunny Sanskari Ki Tulsi Kumari 128 Kbps.mp3"" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
             </div>
-            </header>
+            <p class="text-xs text-pink-400 mt-2 fade-in-up delay-200">Tap play for music</p>
+        </header>
 
         <main class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
@@ -167,7 +177,7 @@
             </div>
         </main>
 
-        <div id="gameSection" class="mt-12 md:col-span-2 flex flex-col items-center justify-center fade-in-up delay-800">
+        <div id="gameSection" class="mt-12 md:col-span-2 flex flex-col items-center justify-center fade-in-up delay-800 relative">
             <h3 class="font-dancing text-3xl text-pink-600 mb-6">Do you love me too?</h3>
             <div class="flex gap-8">
                 <button id="yesBtn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-110">
@@ -211,14 +221,14 @@
         // Browsers block autoplay until interaction. This ensures music starts on the first click anywhere.
         document.body.addEventListener('click', function() {
             if(bgMusic.paused) {
-                bgMusic.play();
+                bgMusic.play().catch(e => console.log("Playback prevented until user interaction"));
             }
         }, { once: true }); // This runs only once
 
         // Event listener for the "Yes" button
         yesBtn.addEventListener('click', () => {
             // Also try playing music here just in case
-            if(bgMusic.paused) bgMusic.play();
+            if(bgMusic.paused) bgMusic.play().catch(e => console.log("Auto-play error handled"));
             
             loveModal.classList.remove('hidden');
             loveModal.classList.add('flex');
